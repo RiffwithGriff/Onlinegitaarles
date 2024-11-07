@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Riff with Griff - Online Gitaarlessen</title>
+    <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Riff with Griff</h1>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Lessen.html">Lessen</a></li>
+                    <li><a href="OverOns.html">Over ons</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="hero">
+            <h2>Leer gitaar spelen vanuit je eigen huis!</h2>
+            <p>Professionele online gitaarlessen voor beginners en gevorderden.</p>
+            <a href="#" class="cta-button" id="open-popup">Start je les nu</a>
+        </section>
+
+        <section id="lessen" class="content-section">
+            <h3>Onze Gitaarlessen</h3>
+            <div class="courses">
+                <div class="course">
+                    <h4>Beginners Gitaarles</h4>
+                    <p>Leer de basis van het gitaar spelen, van akkoorden tot eenvoudige liedjes.</p>
+                </div>
+                <div class="course">
+                    <h4>Intermediate Gitaarles</h4>
+                    <p>Doe kennis op over riffs, barré- en powerchords, zodat je lekker kan shredden op je favoriete nummers</p>
+                </div>
+                <div class="course">
+                    <h4>Advanced Gitaarles</h4>
+                    <p>Verdiep je in complexe technieken zoals fingerpicking, solo's en leer je eigen nummers schrijven</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="over-ons" class="content-section">
+            <h3>Over Riff with Griff</h3>
+            <p>Bij Riff with Griff geloven we dat iedereen gitaar kan leren spelen. Onze ervaren docenten bieden gestructureerde lessen die je stap voor stap begeleiden op jouw muzikale reis.</p>
+        </section>
+    </main>
+
+    <!-- Pop-up -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <span class="close-btn" id="close-popup">&times;</span>
+        <h3>Kies je abonnement</h3>
+       <form id="subscription-form" action="send_email.php" method="POST">
+    <div class="subscription-options">
+        <label>
+            <input type="radio" name="subscription" value="Beginners" required> Beginners
+        </label>
+        <label>
+            <input type="radio" name="subscription" value="Intermediate" required> Intermediate
+        </label>
+        <label>
+            <input type="radio" name="subscription" value="Advanced" required> Advanced
+        </label>
+    </div>
+    
+    <label for="name">Naam:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">E-mailadres:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Wachtwoord:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Abonneer je nu</button>
+</form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Riff with Griff. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript to handle pop-up functionality
+        const openPopup = document.getElementById('open-popup');
+        const closePopup = document.getElementById('close-popup');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+
+        openPopup.addEventListener('click', function() {
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        closePopup.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+		
+		//javascript for form submission
+
+    document.getElementById('subscription-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(this);
+
+    fetch('send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data); // Handle the server response here
+        alert(data); // Inform the user with the server's response
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+    })
+    .catch(error => {
+        console.error('Er is een fout opgetreden:', error);
+        alert('Er is een fout opgetreden bij het verzenden.');
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* Algemene stijlen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav {
+    background-color: #e0dede;
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 15px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #4d4c4c;
+    background-color: #e0dede;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero sectie */
+.hero {
+    background-color: #eab723;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #df682c;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #c15423;
+}
+
+/* Cursus sectie */
+.content-section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.courses {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.course {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 30%;
+}
+
+.course h4 {
+    margin-bottom: 1rem;
+}
+
+/* Video-lessen sectie */
+.video-lessen {
+    display: flex;
+    flex-direction: column; /* Zet de video's onder elkaar */
+    align-items: center; /* Centreert de video's */
+}
+
+.video {
+    margin: 20px 0; /* Voeg ruimte toe tussen de video's */
+    text-align: center; /* Centreer tekst onder video */
+    background-color: white; /* Achtergrondkleur van de video container */
+    padding: 1.5rem; /* Binnenruimte van de video container */
+    border-radius: 8px; /* Ronde hoeken */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Schaduw effect */
+    width: 80%; /* Breedte van de video container */
+}
+
+/* Gele achtergrond achter de tekst proefabonnement */
+.yellow-background {
+    background-color: #eab723; /* Zelfde kleur als de hero sectie */
+    color: white; /* Zorgt ervoor dat de tekst goed leesbaar is */
+    padding: 2rem 1rem; /* Voeg wat ruimte toe aan de boven- en onderkant */
+    border-radius: 8px; /* Ronde hoeken voor een mooiere uitstraling */
+}
+
+video {
+    width: 100%; /* Breedte van de video past zich aan aan de container */
+    height: auto; /* Zorgt ervoor dat de hoogte in verhouding blijft */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Pop-up styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1000;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Overlay styling */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+/* Form styling */
+.popup h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup label {
+    margin-bottom: 5px;
+}
+
+.popup input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup button {
+    padding: 10px;
+    background-color: #df682c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #c15423;
+}
+
+/* Subscription options styling */
+.subscriptions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.subscriptions div {
+    flex: 1;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.subscriptions div:hover {
+    background-color: #e0e0e0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}

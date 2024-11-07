@@ -1,0 +1,141 @@
+/* Algemene stijlen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, rgba(234, 183, 35, 0.5), rgba(234, 183, 35, 0.1));
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header en navigatiebalk */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav {
+    background-color: #e0dede;
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 15px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #4d4c4c;
+    background-color: #e0dede;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sectiestyling voor "Over ons" en andere content */
+.content-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container voor afbeelding en tekst */
+.about-container {
+    display: flex;
+    flex-direction: column; /* Zorg ervoor dat deze eerst verticaal gestapeld is */
+    justify-content: left; /* Verander naar center zodat alles mooi in het midden staat */
+    align-items: center; /* Centeren voor de mobiele weergave */
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.about-container .image-frame {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 2rem;
+}
+
+.about-container .image-frame img {
+    width: 100%;
+    height: auto;
+    border: 5px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Stijlen voor tekstgedeelte */
+.about-text {
+    max-width: 600px;
+    text-align: left;
+    margin-left: 1rem; /* Iets meer ruimte links om de tekst dichter bij de afbeelding te brengen */
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsieve stijlen voor grotere schermen */
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row; /* Verander naar rij op grotere schermen */
+        align-items: flex-start; /* Items beginnen bovenaan uitgelijnd */
+    }
+
+    .about-container .image-frame {
+        margin-right: 2rem; /* Voeg marge toe tussen afbeelding en tekst */
+        margin-bottom: 0;
+    }
+
+    .about-text {
+        flex: 1;
+        margin-left: 1rem; /* Geen marge meer links */
+        padding-left: 0; /* Geen padding meer links */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}

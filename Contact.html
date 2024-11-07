@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact - Riff with Griff</title>
+    <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Riff with Griff</h1>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Lessen.html">Lessen</a></li>
+                    <li><a href="OverOns.html">Over ons</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- Contact sectie -->
+<main>
+    <section id="contact" class="content-section">
+        <h3>Neem contact met ons op</h3>
+        <p>Heb je vragen of wil je meer weten over onze gitaarlessen? Vul het onderstaande formulier in en we nemen zo snel mogelijk contact met je op.</p>
+
+        <!-- Toegevoegde container voor afbeelding en formulier -->
+        <div class="contact-container">
+            <!-- Contactformulier -->
+            <form id="contact-form" action="send_contact.php" method="POST">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mailadres:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Bericht:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Verstuur</button>
+            </form>
+
+            <!-- Toegevoegde afbeelding met frame -->
+            <div class="image-frame">
+                <img src="logo.png" alt="Gitaarles afbeelding">
+            </div>
+        </div>
+    </section>
+</main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Riff with Griff. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <!-- JavaScript voor form submission -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Voorkom standaard formulierverzending
+
+            const formData = new FormData(this);
+
+            fetch('send_contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert('Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.');
+                document.getElementById('contact-form').reset();
+            })
+            .catch(error => {
+                console.error('Er is een fout opgetreden:', error);
+                alert('Er is iets misgegaan bij het versturen van je bericht.');
+            });
+        });
+    </script>
+</body>
+</html>
